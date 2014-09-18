@@ -1,9 +1,7 @@
 csharp-swig-extensions
 ======================
 
-Writing C# extensions for C code using SWIG.
-
-I initially thought that writing C extensions for C# would be as easy and flexible as writing them in Python. That was until I got my feet wet. Oh the pain. Python is built on C and CPython is a natural way of writing extensions in Python.
+I initially thought that writing C# extensions for C code would be as easy and flexible as writing them in Python. That was until I got my feet wet. Oh the pain and the anguish! Python is built on C and CPython is a natural way of writing extensions in Python where as C# is anything but that.
 
 You can create and return any internal python object(List, Hashtable etc.) in your C extension and access the same in the Python layer. Want to shoot yourself in the foot and return a Python List of Python Hashtables in C and access them in python as List of Hashtables. Sure, go ahead.
 
@@ -15,22 +13,22 @@ And because of the reason mentioned above, I added new methods/accessors. I coul
 
 There are a few more examples and I have added enough comments in the code base of help. Remember, the SWIG documentation is your friend.
 
-Instructions
-============
+Build Instructions
+==================
 Run "swig -csharp example.i" in command prompt. This will generate a lot of files required in the VS Project.
 Open the example.sln in Visual Studio.
 Right click on Solution and choose "Rebuild All"
 Start the example-cs project.
 
-Exotic VS setting details
-=========================
+Visual Studio setting details
+=============================
 Don't bother reading this unless you are creating the project yourself:
 1. Set to compile in pure C.
 2. Configuration Properties -> C/C++ -> Advanced -> Compile As = Compile as C Code (/TC)
 
 
-Here are some errors that I came across
-=======================================
+Errors
+======
 1. "eh.h is only for C++!"	This means that there are some C++ bindings that have been added unncessarily in your C code. Remove those.
 
 2. "LINK : fatal error LNK1123: failure during conversion to COFF: file invalid or corrupt":
