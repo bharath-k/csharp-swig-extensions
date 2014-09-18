@@ -15,10 +15,13 @@ There are a few more examples and I have added enough comments in the code base 
 
 Build Instructions
 ------------------
-Run "swig -csharp example.i" in command prompt. This will generate a lot of files required in the VS Project.
-Open the example.sln in Visual Studio.
-Right click on Solution and choose "Rebuild All"
-Start the example-cs project.
+1. Run "swig -csharp example.i" in command prompt. This will generate a lot of files required in the VS Project.
+
+2. Open the example.sln in Visual Studio.
+
+3. Right click on Solution and choose "Rebuild All"
+
+4. Start the example-cs project.
 
 Visual Studio setting details
 -----------------------------
