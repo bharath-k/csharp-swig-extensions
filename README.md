@@ -14,7 +14,7 @@ And because of the reason mentioned above, I added new methods/accessors. I coul
 There are a few more examples and I have added enough comments in the code base of help. Remember, the SWIG documentation is your friend.
 
 Build Instructions
-==================
+------------------
 Run "swig -csharp example.i" in command prompt. This will generate a lot of files required in the VS Project.
 Open the example.sln in Visual Studio.
 Right click on Solution and choose "Rebuild All"
