@@ -23,6 +23,7 @@ Start the example-cs project.
 Visual Studio setting details
 -----------------------------
 Don't bother reading this unless you are creating the project yourself:
+
 1. Set to compile in pure C.
 
 2. Configuration Properties -> C/C++ -> Advanced -> Compile As = Compile as C Code (/TC)
