@@ -21,14 +21,14 @@ Right click on Solution and choose "Rebuild All"
 Start the example-cs project.
 
 Visual Studio setting details
-=============================
+-----------------------------
 Don't bother reading this unless you are creating the project yourself:
 1. Set to compile in pure C.
 2. Configuration Properties -> C/C++ -> Advanced -> Compile As = Compile as C Code (/TC)
 
 
 Errors
-======
+------
 1. "eh.h is only for C++!"	This means that there are some C++ bindings that have been added unncessarily in your C code. Remove those.
 
 2. "LINK : fatal error LNK1123: failure during conversion to COFF: file invalid or corrupt":
