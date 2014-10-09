@@ -13,6 +13,22 @@ And because of the reason mentioned above, I added new methods/accessors. I coul
 
 There are a few more examples and I have added enough comments in the code base of help. Remember, the SWIG documentation is your friend.
 
+
+Handling wchar_t using SWIG:
+----------------------------
+
+It is normal in the windows world to use wchar_t instead of char. 
+
+For argument's sake, consider a windows library that returns "char *" which is called from C# wrapper library using Pinvoke. When SWIG generates wrappers, it inserts a __stdcall before the "char *" is passed from C to C#. This puts the onus of stack clean on the callee i.e. the C# layer would own the string and be responsible for its cleanup (through GC).
+
+No such luxuries for a C windows library that uses wchar_t. A method returning wchar_t in C returns a pointer to the native object (or IntPtr) in C#(just like any other non-basic type). After the IntPtr is obtained in the C# layer, we have to run...
+	System.Runtime.InteropServices.Marshal.PtrToStringUni(ptr)
+...to obtain the string value. I figured all this out but realized that this was all too complicated for SWIG to have not simplified things.
+
+A bit of digging and I found that all I had to do was add the following line...
+	%include wchar.i
+...in the SWIG interface file and SWIG handles wchar_t automatically.
+
 Build Instructions
 ------------------
 1. Run "swig -csharp example.i" in command prompt. This will generate a lot of files required in the VS Project.
