@@ -14,7 +14,7 @@ get_service()
 {
     // Just malloc a MYService with dummy values.
     MYService *service = (MYService *)malloc(sizeof(MYService));
-    char *strval = (char *)malloc(5*sizeof(char *));
+    char *strval = (char *)calloc(12, sizeof(char));
     strcpy(strval, "test string");
     service->stringEntry = strval;
     return service;
@@ -71,8 +71,29 @@ get_index_value(MYService **service_array, int index)
     return service_array[index];
 }
 
+/*
+ * Returns a character pointer.
+ */
+char *return_string()
+{
+    char *strval = (char *)calloc(12, sizeof(char));
+    strcpy(strval, "test string");
+    return strval;
+}
+
+/*
+ * Returns a wide character pointer.
+ */
+wchar_t *return_string_wchar()
+{
+    wchar_t *strval = (wchar_t *)calloc(12, sizeof(wchar_t));
+    wcscpy(strval, L"test string");
+    return strval;
+}
+
 int
 main(int argc, char **argv)
 {
-
+    /*char *t1 = return_string();
+    wchar_t *t2 = return_string_wchar();*/
 }
