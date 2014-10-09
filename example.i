@@ -1,4 +1,6 @@
 // example.i
+%include wchar.i
+
 %module example
 %{
 #include "example.h"
