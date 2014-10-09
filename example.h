@@ -47,3 +47,13 @@ int fillup_service(int fail, MYService **servicePointer);
 * If fail is not 0, an error code is returned.
  */
 int fillup_service_array(int fail, MYService ***serviceArrayPointer);
+
+/*
+ * Returns a character pointer.
+ */
+char *return_string();
+
+/*
+ * Returns a wide character pointer.
+ */
+wchar_t *return_string_wchar();
